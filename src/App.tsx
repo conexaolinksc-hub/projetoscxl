@@ -1227,7 +1227,7 @@ export default function MarketingProjectManager() {
                         <button onClick={() => toggleConcluido(t.id)} className={t.concluido ? 'text-emerald-500' : 'text-slate-300 hover:text-slate-500'}>{t.concluido ? <CheckSquare size={18} /> : <Square size={18} />}</button>
                         {isSidebarOpen && (
                           <div className="min-w-0 flex-1 group">
-                            <div className={`text-sm font-medium truncate mb-1 ${t.concluido ? 'line-through text-slate-400' : 'text-slate-700'}`}>{t.titulo}</div>
+                            <div title={t.titulo} className={`text-sm font-medium truncate mb-1 ${t.concluido ? 'line-through text-slate-400' : 'text-slate-700'}`}>{t.titulo}</div>
                             <div className="flex items-center justify-between mt-1 relative">
                               <div className="flex items-center gap-2 min-w-0 flex-1">
 
@@ -1346,6 +1346,7 @@ export default function MarketingProjectManager() {
                           onClick={() => openEditTask(t)}
                           className={`absolute top-4 h-8 cursor-pointer flex items-center px-2 text-[11px] text-white font-medium whitespace-nowrap overflow-hidden transition-all rounded-md shadow-sm hover:shadow-md hover:-translate-y-0.5 ${barColorClass} ${t.concluido ? 'opacity-50 grayscale hover:shadow-sm hover:translate-y-0' : ''} ${isPushed ? 'ring-2 ring-orange-300 ring-offset-1' : ''}`}
                           style={{ left: geo.x, width: geo.w }}
+                          title={t.titulo}
                         >
                           {t.constraintDate && <Pin size={10} className="mr-1 fill-white/20" />}
                           <span className="truncate flex-1">{t.titulo}</span>
